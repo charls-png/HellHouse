@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <h1 class="glitch-text">HELL HOUSE</h1>
+        <p class="subtitle">CHRONICLES</p>
+      </div>
+
+      <nav class="nav">
+        <a role="button" tabindex="0" (click)="scrollToSection($event, 'inicio')" (keydown.enter)="scrollToSection($event, 'inicio')" [class.active]="isActive('inicio')">Inicio</a>
+        <a role="button" tabindex="0" (click)="scrollToSection($event, 'about')" (keydown.enter)="scrollToSection($event, 'about')" [class.active]="isActive('about')">La Mansión</a>
+        <a role="button" tabindex="0" (click)="scrollToSection($event, 'nosotros')" (keydown.enter)="scrollToSection($event, 'nosotros')" [class.active]="isActive('nosotros')">Nosotros</a>
+        <a role="button" tabindex="0" (click)="scrollToSection($event, 'news')" (keydown.enter)="scrollToSection($event, 'news')" [class.active]="isActive('news')">Noticias</a>
+        <a role="button" tabindex="0" (click)="scrollToSection($event, 'newsletter')" (keydown.enter)="scrollToSection($event, 'newsletter')" [class.active]="isActive('newsletter')">Newsletter</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="warning-banner">
+    <p>⚠️ ADVERTENCIA: Lo que sucedió aquí no puede ser olvidado ⚠️</p>
+  </div>
+</header>

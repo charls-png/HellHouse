@@ -1,0 +1,224 @@
+<!-- Jumpscare Overlay -->
+<div *ngIf="showJumpscare" class="jumpscare-overlay">
+  <img src="/assets/images/jumpscare.png" alt="Jumpscare" class="jumpscare-image">
+</div>
+
+<!-- Hero Section -->
+<section id="inicio" class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <h1 class="hero-title glitch-text">HELL HOUSE</h1>
+    <p class="hero-subtitle">La Mansión Abaddon Nunca Cerró Realmente</p>
+    <p class="hero-text">
+      15 de octubre de 2009. Una noche que cambió todo.<br>
+      Lo que sucedió dentro de estas paredes no puede ser explicado.<br>
+      Pero pronto, tú lo experimentarás.
+    </p>
+    <div class="hero-cta">
+      <a href="#newsletter" class="btn btn-primary">Recibe Actualizaciones</a>
+      <a href="#about" class="btn btn-secondary" (click)="onDiscoverClick($event)">Descubre la Historia</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>La Mansión Abaddon</h2>
+        <p>
+          Construida en 1893, la Mansión Abaddon fue testigo de incontables tragedias a lo largo de más de un siglo.
+          Muertes inexplicables, desapariciones sin resolver, y susurros de algo oscuro que habitaba entre sus paredes.
+        </p>
+        <p>
+          En 2009, un grupo intentó convertir la mansión abandonada en una atracción embrujada para Halloween.
+          La apertura nunca sucedió. Lo que las cámaras capturaron esa noche es demasiado perturbador para ser mostrado públicamente.
+        </p>
+        <p>
+          Ahora, 15 años después, las puertas se abren nuevamente. Pero esta vez, tú serás parte de la historia.
+        </p>
+
+        <div class="warning-box">
+          <h3>⚠️ ADVERTENCIA</h3>
+          <p>
+            Esta experiencia no es para todos. Contiene elementos de terror psicológico intenso,
+            escenas perturbadoras y situaciones que pueden causar incomodidad extrema.
+          </p>
+          <p>Se recomienda discreción.</p>
+        </div>
+      </div>
+
+      <div class="about-features">
+        <div class="feature-card">
+          <div class="feature-icon">🏚️</div>
+          <h3>Exploración</h3>
+          <p>Recorre cada rincón de la Mansión Abaddon. Descubre secretos que han permanecido ocultos durante décadas.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📹</div>
+          <h3>Found Footage</h3>
+          <p>Experiencia inspirada en el estilo found footage de Hell House LLC. Realismo que te hará cuestionar la realidad.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🕯️</div>
+          <h3>Terror Psicológico</h3>
+          <p>No todo lo que ves es real. La mansión juega con tu mente. ¿Podrás distinguir entre realidad y pesadilla?</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Historia Profunda</h3>
+          <p>Una narrativa rica con múltiples capas. Cada documento, cada grabación, cada susurro cuenta una parte de la historia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="timeline-section section">
+  <div class="container">
+    <h2 class="text-center">Cronología de Eventos</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">1893</div>
+        <div class="timeline-content">
+          <h3>Apertura de la Mansión</h3>
+          <p>La Mansión Abaddon abre sus puertas al público. Promete ser la mansión más lujosa de la región.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1903</div>
+        <div class="timeline-content">
+          <h3>Primera Tragedia</h3>
+          <p>Cinco huéspedes desaparecen en una sola noche. Nunca fueron encontrados. La mansión cierra temporalmente.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1945</div>
+        <div class="timeline-content">
+          <h3>Incendio Misterioso</h3>
+          <p>Un incendio consume el ala este. 12 víctimas. Las autoridades nunca determinaron la causa real.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1994</div>
+        <div class="timeline-content">
+          <h3>Cierre Definitivo</h3>
+          <p>La mansión cierra permanentemente después de "problemas estructurales". La verdadera razón permanece clasificada.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2009</div>
+        <div class="timeline-content">
+          <h3>La Noche que Cambió Todo</h3>
+          <p>Halloween. Un equipo entra para crear una atracción embrujada. Solo uno salió. Las grabaciones revelan el horror.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-content">
+          <h3>Las Puertas se Abren</h3>
+          <p>La mansión está activa nuevamente. Esta vez, tú eres parte de la historia. ¿Te atreves a entrar?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nosotros Section -->
+<section id="nosotros" class="nosotros-section section">
+  <div class="container">
+    <h2 class="text-center">Sobre Nosotros</h2>
+
+    <div class="nosotros-content">
+      <div class="nosotros-text">
+        <h3>El Equipo</h3>
+        <p>
+          Somos un equipo apasionado por crear experiencias de terror inmersivas que desafían
+          la línea entre la realidad y la ficción. Inspirados por las películas Hell House LLC
+          y el género found footage, hemos trabajado incansablemente para traer la Mansión Abaddon
+          a la vida.
+        </p>
+        <p>
+          Nuestro objetivo es no solo entretener, sino crear una experiencia que permanezca
+          contigo mucho después de que hayas cerrado la aplicación. Cada detalle, cada sonido,
+          cada imagen ha sido cuidadosamente diseñada para sumergirte en el mundo oscuro de
+          la mansión.
+        </p>
+
+        <h3>El Juego</h3>
+        <p>
+          <strong>Hell House</strong> es más que un juego de terror. Es una experiencia
+          interactiva que combina elementos de exploración, narrativa no lineal y terror psicológico
+          intenso. Cada decisión que tomes, cada rincón que explores, puede revelar un secreto
+          o desencadenar algo que no esperabas.
+        </p>
+        <p>
+          Utilizamos técnicas avanzadas de renderizado y diseño de audio para crear una atmósfera
+          única que te hará cuestionar todo lo que ves y escuchas. La mansión está viva, y
+          reacciona a tu presencia.
+        </p>
+      </div>
+
+      <div class="nosotros-features">
+        <div class="team-card">
+          <div class="team-icon">🎮</div>
+          <h4>Desarrollo</h4>
+          <p>Tecnologías modernas para una experiencia inmersiva</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon">🎨</div>
+          <h4>Diseño</h4>
+          <p>Arte cuidadosamente diseñado para crear atmósfera única</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon">🎵</div>
+          <h4>Audio</h4>
+          <p>Banda sonora y efectos de sonido diseñados para el terror</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon">📖</div>
+          <h4>Narrativa</h4>
+          <p>Historia profunda con múltiples capas y misterios</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nosotros-cta">
+      <p class="cta-text">
+        ¿Listo para enfrentar tus miedos?<br>
+        <span class="cta-subtext">La Mansión Abaddon te espera...</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Noticias -->
+<app-news></app-news>
+
+<!-- Newsletter -->
+<app-newsletter></app-newsletter>
+
+<!-- Testimonio Final -->
+<section class="testimony-section">
+  <div class="container">
+    <blockquote class="testimony">
+      <p>"No entren. Por favor. Si encuentran esto... no entren a la mansión. Lo que está ahí dentro... no es humano.
+      Ya es tarde para mí, pero ustedes aún pueden salvarse. El sótano... Dios mío, el sótano..."</p>
+      <cite>— Última grabación recuperada, 16 de octubre de 2009, 3:47 AM</cite>
+    </blockquote>
+  </div>
+</section>

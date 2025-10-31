@@ -1,0 +1,73 @@
+<!-- Jumpscare Overlay -->
+<div *ngIf="showJumpscare" class="jumpscare-overlay">
+  <img src="/assets/images/jumpscare.png" alt="Jumpscare" class="jumpscare-image">
+</div>
+
+<section id="newsletter" class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-content">
+      <div class="newsletter-header">
+        <h2>Únete al Newsletter</h2>
+        <p class="subtitle">Recibe actualizaciones sobre la Mansión Abaddon directamente en tu email</p>
+      </div>
+
+      <div class="warning-box">
+        <p>⚠️ Al suscribirte, aceptas recibir información perturbadora sobre los eventos de la mansión.</p>
+        <p>Lo que descubras puede cambiar tu percepción de la realidad.</p>
+      </div>
+
+      <form class="newsletter-form" (ngSubmit)="onSubmit()" #subscribeForm="ngForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="name"
+            placeholder="¿Cómo debemos llamarte?"
+            [disabled]="isLoading"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="tu@email.com"
+            required
+            [disabled]="isLoading"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn-subscribe"
+          [disabled]="isLoading || !email"
+        >
+          <span *ngIf="!isLoading">Suscribirse</span>
+          <span *ngIf="isLoading" class="loading">
+            <span class="spinner"></span> Procesando...
+          </span>
+        </button>
+      </form>
+
+      <!-- Mensaje de respuesta -->
+      <div
+        *ngIf="message"
+        class="message"
+        [class.success]="messageType === 'success'"
+        [class.error]="messageType === 'error'"
+      >
+        {{ message }}
+      </div>
+
+      <div class="privacy-note">
+        <p>🔒 Tu información está segura. Nunca compartiremos tus datos.</p>
+        <p>Puedes cancelar tu suscripción en cualquier momento desde los emails que recibas.</p>
+      </div>
+    </div>
+  </div>
+</section>

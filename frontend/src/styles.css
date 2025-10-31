@@ -1,0 +1,634 @@
+/* ========================================
+   HELL HOUSE - Global Styles
+   Diseño oscuro y aterrador
+   ======================================== */
+
+/* Importar fuente tenebrosa */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=Roboto+Mono:wght@300;400;700&display=swap');
+
+/* Reset y Variables CSS */
+:root {
+  /* Colores principales */
+  --color-blood: #8b0000;
+  --color-dark-blood: #5a0000;
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #2a2a2a;
+  --color-text-primary: #cccccc;
+  --color-text-secondary: #999999;
+  --color-text-dim: #666666;
+  --color-border: #3a0000;
+  --color-shadow: rgba(139, 0, 0, 0.3);
+
+  /* Fuentes */
+  --font-creepy: 'Creepster', cursive;
+  --font-typewriter: 'Special Elite', cursive;
+  --font-mono: 'Roboto Mono', monospace;
+
+  /* Espaciado */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.6;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 0, 0, 0.03) 2px,
+      rgba(139, 0, 0, 0.03) 4px
+    ),
+    radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Efecto de grano/ruido sutil */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>');
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* Scrollbar oscuro */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-blood);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blood);
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-creepy);
+  color: var(--color-blood);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-blood);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+a:hover {
+  color: #ff4444;
+  text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+/* Botones */
+button, .btn {
+  background-color: var(--color-dark-blood);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-blood);
+  padding: 12px 30px;
+  font-family: var(--font-typewriter);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--color-blood);
+  box-shadow: 0 0 20px var(--color-shadow);
+  transform: translateY(-2px);
+}
+
+button:active, .btn:active {
+  transform: translateY(0);
+}
+
+button:disabled, .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Inputs */
+input, textarea {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  width: 100%;
+  transition: all var(--transition-fast);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-blood);
+  box-shadow: 0 0 10px var(--color-shadow);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Sección */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Efectos de texto glitch sutiles */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  25% {
+    text-shadow: -2px -2px 4px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.8);
+  }
+  75% {
+    text-shadow: -2px 2px 4px rgba(139, 0, 0, 0.5);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.glitch-text {
+  animation: glitch 3s infinite;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid var(--color-bg-secondary);
+  border-top: 3px solid var(--color-blood);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card/Box */
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--color-shadow);
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+
+.text-blood {
+  color: var(--color-blood);
+}
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container, .container-wide {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
+/* Imágenes aleatorias pequeñas con bordes difuminados */
+.random-image-overlay {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  animation: imageFadeIn 0.4s ease-out;
+  width: 180px;
+  height: 180px;
+}
+
+.random-image-overlay.fade-out {
+  animation: imageFadeOut 0.5s ease-out;
+}
+
+.random-face-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Bordes difuminados */
+  mask-image: radial-gradient(ellipse at center, black 75%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 75%, transparent 100%);
+  filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.6)) brightness(0.9);
+  /* Efecto de borde suave y sutil */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9),
+              inset 0 0 30px rgba(0, 0, 0, 0.4),
+              0 0 5px rgba(139, 0, 0, 0.3);
+}
+
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes imageFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   DETERIORO PROGRESIVO DE LA PÁGINA
+   ======================================== */
+
+/* Nivel 1 - Leve (30 segundos) */
+body.deterioration-1 {
+  /* Sin oscurecimiento - solo efectos visuales sutiles */
+}
+
+body.deterioration-1::before {
+  opacity: 0.5;
+}
+
+/* Nivel 2 - Moderado (1 minuto) */
+body.deterioration-2 {
+  /* Sin oscurecimiento - mantener información legible */
+}
+
+body.deterioration-2::before {
+  opacity: 0.6;
+}
+
+body.deterioration-2::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 0, 0, 0.02) 2px,
+    rgba(139, 0, 0, 0.02) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Nivel 3 - Severo (2 minutos) */
+body.deterioration-3 {
+  /* Sin oscurecimiento - mantener legibilidad */
+}
+
+body.deterioration-3::before {
+  opacity: 0.7;
+}
+
+body.deterioration-3::after {
+  opacity: 0.4;
+  animation: scanline 6s linear infinite, glitchFlicker 0.15s infinite;
+}
+
+body.deterioration-3 .glitch-text {
+  animation: glitch 2s infinite, glitchFlicker 0.3s infinite;
+}
+
+@keyframes glitchFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow:
+      2px 0 #8b0000,
+      -2px 0 #000;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow:
+      2px 0 #8b0000,
+      -2px 0 #000;
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow:
+      -2px 0 #8b0000,
+      2px 0 #000;
+  }
+  60% {
+    transform: translate(2px, 2px);
+    text-shadow:
+      -2px 0 #8b0000,
+      2px 0 #000;
+  }
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow:
+      2px 0 #8b0000,
+      -2px 0 #000;
+  }
+}
+
+/* Nivel 4 - Crítico (3 minutos) */
+body.deterioration-4 {
+  /* Sin oscurecimiento - mantener legibilidad */
+}
+
+body.deterioration-4::before {
+  opacity: 0.8;
+}
+
+body.deterioration-4::after {
+  opacity: 0.5;
+  animation: scanline 4s linear infinite, glitchFlicker 0.1s infinite;
+}
+
+body.deterioration-4 .container {
+  position: relative;
+}
+
+body.deterioration-4 .container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+  animation: distortionPulse 3s ease-in-out infinite;
+}
+
+@keyframes distortionPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.02); }
+}
+
+body.deterioration-4 .glitch-text {
+  animation: glitch 1.5s infinite, glitchFlicker 0.2s infinite;
+  text-shadow:
+    2px 2px 0 #8b0000,
+    -2px -2px 0 #000,
+    4px 4px 0 rgba(139, 0, 0, 0.3);
+}
+
+/* Nivel 5 - Extremo (5 minutos+) */
+body.deterioration-5 {
+  /* Sin oscurecimiento - mantener legibilidad */
+}
+
+body.deterioration-5::before {
+  opacity: 0.9;
+}
+
+body.deterioration-5::after {
+  opacity: 0.6;
+  animation: scanline 2s linear infinite, glitchFlicker 0.05s infinite;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(139, 0, 0, 0.03) 1px,
+    rgba(139, 0, 0, 0.03) 2px
+  );
+}
+
+body.deterioration-5 .container::before {
+  opacity: 0.7;
+  animation: distortionPulse 2s ease-in-out infinite, distortionShift 4s infinite;
+}
+
+@keyframes distortionShift {
+  0%, 100% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(2px) scale(1.01); }
+  50% { transform: translateX(0) scale(1); }
+  75% { transform: translateX(-2px) scale(0.99); }
+}
+
+body.deterioration-5 .glitch-text {
+  animation: glitch 1s infinite, glitchFlicker 0.1s infinite, glitchDistort 3s infinite;
+  text-shadow:
+    3px 3px 0 #8b0000,
+    -3px -3px 0 #000,
+    6px 6px 0 rgba(139, 0, 0, 0.5),
+    0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+@keyframes glitchDistort {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: skew(0deg);
+  }
+  25% {
+    clip-path: inset(2% 0 0 0);
+    transform: skew(0.5deg);
+  }
+  50% {
+    clip-path: inset(0 2% 0 0);
+    transform: skew(-0.5deg);
+  }
+  75% {
+    clip-path: inset(2% 0 0 0);
+    transform: skew(0.3deg);
+  }
+}
+
+/* Asegurar que el texto siga siendo legible */
+body.deterioration-3 .container,
+body.deterioration-4 .container,
+body.deterioration-5 .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Asegurar legibilidad del texto en todos los niveles */
+body.deterioration-1 h1,
+body.deterioration-1 h2,
+body.deterioration-1 h3,
+body.deterioration-1 p,
+body.deterioration-1 span,
+body.deterioration-1 a,
+body.deterioration-2 h1,
+body.deterioration-2 h2,
+body.deterioration-2 h3,
+body.deterioration-2 p,
+body.deterioration-2 span,
+body.deterioration-2 a,
+body.deterioration-3 h1,
+body.deterioration-3 h2,
+body.deterioration-3 h3,
+body.deterioration-3 p,
+body.deterioration-3 span,
+body.deterioration-3 a,
+body.deterioration-4 h1,
+body.deterioration-4 h2,
+body.deterioration-4 h3,
+body.deterioration-4 p,
+body.deterioration-4 span,
+body.deterioration-4 a,
+body.deterioration-5 h1,
+body.deterioration-5 h2,
+body.deterioration-5 h3,
+body.deterioration-5 p,
+body.deterioration-5 span,
+body.deterioration-5 a {
+  position: relative;
+  z-index: 3;
+  filter: brightness(1.1) !important; /* Aclarar texto para mejor legibilidad */
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 6px rgba(0, 0, 0, 0.7),
+    1px 1px 2px rgba(255, 255, 255, 0.1); /* Sombra blanca sutil para contraste */
+  color: inherit !important;
+}
+
+/* Contenedores también deben ser legibles */
+body.deterioration-1 .container,
+body.deterioration-2 .container,
+body.deterioration-3 .container,
+body.deterioration-4 .container,
+body.deterioration-5 .container {
+  position: relative;
+  z-index: 2;
+  filter: brightness(1.05) !important; /* Ligeramente más claro para contraste */
+}
+
+/* Efecto de parpadeo sutil en niveles altos */
+body.deterioration-4,
+body.deterioration-5 {
+  animation: pageFlicker 5s infinite;
+}
+
+@keyframes pageFlicker {
+  0%, 100% { opacity: 1; }
+  98% { opacity: 1; }
+  99% { opacity: 0.98; }
+}

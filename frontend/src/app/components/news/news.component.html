@@ -1,0 +1,48 @@
+<section id="news" class="news-section">
+  <div class="container">
+    <div class="news-header">
+      <h2>Últimas Noticias</h2>
+      <p class="subtitle">Actualizaciones desde la Mansión Abaddon</p>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="isLoading" class="loading-container">
+      <div class="spinner"></div>
+      <p>Cargando noticias...</p>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="error && !isLoading" class="error-message">
+      <p>{{ error }}</p>
+    </div>
+
+    <!-- Lista de noticias -->
+    <div *ngIf="!isLoading && !error && news.length > 0" class="news-grid">
+      <article *ngFor="let item of news" class="news-card">
+        <div class="news-date">
+          <span>{{ formatDate(item.published_at) }}</span>
+        </div>
+
+        <h3>{{ item.title }}</h3>
+
+        <div class="news-excerpt">
+          <p>{{ item.excerpt }}</p>
+        </div>
+
+        <div class="news-content">
+          <p>{{ item.content }}</p>
+        </div>
+
+        <div class="news-footer">
+          <span class="tag">CLASIFICADO</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sin noticias -->
+    <div *ngIf="!isLoading && !error && news.length === 0" class="no-news">
+      <p>No hay noticias disponibles en este momento...</p>
+      <p class="subtitle">El silencio puede ser más aterrador que cualquier noticia.</p>
+    </div>
+  </div>
+</section>

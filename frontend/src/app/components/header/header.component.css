@@ -1,0 +1,111 @@
+.header {
+  background-color: var(--color-bg-secondary);
+  border-bottom: 3px solid var(--color-blood);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+}
+
+.logo {
+  text-align: left;
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1;
+  color: var(--color-blood);
+  font-family: var(--font-creepy);
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  font-family: var(--font-typewriter);
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  letter-spacing: 4px;
+  margin: 0;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.nav a {
+  color: var(--color-text-primary);
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 10001;
+  pointer-events: auto;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--color-blood);
+  border-color: var(--color-blood);
+  background-color: rgba(139, 0, 0, 0.1);
+}
+
+.warning-banner {
+  background-color: var(--color-dark-blood);
+  text-align: center;
+  padding: 8px 0;
+  border-top: 1px solid var(--color-blood);
+}
+
+.warning-banner p {
+  margin: 0;
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  color: #ffcccc;
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .warning-banner p {
+    font-size: 0.75rem;
+  }
+}
+
