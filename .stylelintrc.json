@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended"
+  ],
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": null,
+    "color-named": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "selector-max-id": 2,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "keyframes-name-pattern": null,
+    "string-quotes": null,
+    "max-nesting-depth": 10,
+    "indentation": null,
+    "no-duplicate-selectors": true,
+    "no-empty-source": null,
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "media-feature-range-notation": null,
+    "property-no-vendor-prefix": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-block-single-line-max-declarations": null,
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
+      }
+    ]
+  },
+  "ignoreFiles": [
+    "**/*.min.css",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}
+

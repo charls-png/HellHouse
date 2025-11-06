@@ -38,10 +38,10 @@ Página web informativa inspirada en **Hell House LLC** para promocionar un jueg
 - **PostgreSQL** - Base de datos relacional
 - **Resend** - Servicio de emails (recomendado)
 
-### DevOps (Futuro)
-- Docker para contenedores
-- Nginx para reverse proxy
-- GitHub Actions para CI/CD
+### DevOps
+- **GitHub Actions** - Automatización de pruebas (linting HTML, CSS, JavaScript) ✅
+- Docker para contenedores (futuro)
+- Nginx para reverse proxy (futuro)
 
 ---
 
@@ -129,10 +129,20 @@ Integradora/
 ├── database/
 │   └── schema.sql               # Schema PostgreSQL
 │
+├── .github/
+│   └── workflows/
+│       └── lint.yml             # Workflow de GitHub Actions para linting
+│
+├── .htmlhintrc                  # Configuración de HTMLHint
+├── .stylelintrc.json            # Configuración de Stylelint
+├── .eslintrc.json               # Configuración de ESLint
+│
 ├── README.md                    # Este archivo
 ├── SETUP.md                     # Guía de instalación detallada
 ├── DATABASE_OPTIONS.md          # Opciones de base de datos
-└── CONTENT_IDEAS.md             # Ideas de contenido
+├── CONTENT_IDEAS.md             # Ideas de contenido
+├── AUTOMATION_DOCUMENTATION.md  # Documentación de automatización de pruebas
+└── LINTING_QUICKSTART.md        # Guía rápida de linting
 ```
 
 ---
@@ -189,6 +199,8 @@ ng serve
 - **[SETUP.md](SETUP.md)** - Guía completa de instalación paso a paso
 - **[DATABASE_OPTIONS.md](DATABASE_OPTIONS.md)** - Comparación de bases de datos (PostgreSQL, MongoDB, Supabase, Firebase)
 - **[CONTENT_IDEAS.md](CONTENT_IDEAS.md)** - Ideas para imágenes, audio y contenido de terror
+- **[AUTOMATION_DOCUMENTATION.md](AUTOMATION_DOCUMENTATION.md)** - Documentación completa del proceso de automatización de pruebas (linting HTML, CSS, JavaScript)
+- **[LINTING_QUICKSTART.md](LINTING_QUICKSTART.md)** - Guía rápida para ejecutar linting localmente
 
 ### API Endpoints
 

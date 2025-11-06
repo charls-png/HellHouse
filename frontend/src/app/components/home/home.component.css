@@ -7,8 +7,7 @@
   justify-content: center;
   text-align: center;
   background-color: var(--color-bg-primary);
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(10, 10, 10, 0.9)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(10, 10, 10, 0.9)),
     repeating-linear-gradient(
       0deg,
       transparent,
