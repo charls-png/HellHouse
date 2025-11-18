@@ -1,0 +1,27 @@
+# Dockerfile para desarrollo con hot-reload
+FROM node:20-alpine
+
+# Información del contenedor
+LABEL maintainer="Hell House Team"
+LABEL description="Frontend Angular para desarrollo (con hot-reload)"
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY package*.json ./
+
+# Instalar TODAS las dependencias (incluyendo devDependencies)
+RUN npm install
+
+# Exponer el puerto de Angular (ng serve usa 4200)
+EXPOSE 4200
+
+# Variables de entorno
+ENV NODE_ENV=development
+
+# El código fuente se montará como volumen
+# Comando por defecto (puede ser sobrescrito en docker-compose)
+CMD ["npm", "start"]
+
+

@@ -1,0 +1,45 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist
+.angular
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Documentación y tests
+*.md
+test
+tests
+coverage
+.nyc_output
+
+# Archivos temporales
+tmp
+temp
+.cache
+
+# Angular cache
+.angular/cache
+
+

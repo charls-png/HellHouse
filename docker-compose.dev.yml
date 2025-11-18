@@ -1,0 +1,88 @@
+services:
+  # Base de datos PostgreSQL (igual que producción)
+  db:
+    image: postgres:16-alpine
+    container_name: hellhouse-db-dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-hellhouse}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-hellhouse2024}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hellhouse-network
+
+  # Backend API (con hot-reload usando nodemon)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: hellhouse-backend-dev
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: ${BACKEND_PORT:-3000}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-hellhouse}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-hellhouse2024}
+      FRONTEND_URL: http://localhost:${FRONTEND_PORT:-4200}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+    ports:
+      - "${BACKEND_PORT:-3000}:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Montar código fuente para hot-reload
+      - ./backend/src:/app/src
+      - ./backend/package.json:/app/package.json
+      - /app/node_modules  # Excluir node_modules del volumen
+    networks:
+      - hellhouse-network
+    command: npm run dev  # Usar nodemon para hot-reload
+
+  # Frontend Angular (con ng serve para hot-reload)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: hellhouse-frontend-dev
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "${FRONTEND_PORT:-4200}:4200"
+    depends_on:
+      - backend
+    volumes:
+      # Montar código fuente para hot-reload
+      - ./frontend/src:/app/src
+      - ./frontend/angular.json:/app/angular.json
+      - ./frontend/tsconfig.json:/app/tsconfig.json
+      - ./frontend/tsconfig.app.json:/app/tsconfig.app.json
+      - /app/node_modules  # Excluir node_modules del volumen
+    networks:
+      - hellhouse-network
+    command: npm start -- --host 0.0.0.0 --disable-host-check  # Usar ng serve para hot-reload
+
+# Volúmenes persistentes
+volumes:
+  postgres_data:
+    driver: local
+
+# Red personalizada
+networks:
+  hellhouse-network:
+    driver: bridge
+

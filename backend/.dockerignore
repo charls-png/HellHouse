@@ -1,0 +1,41 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Documentación y tests
+*.md
+test
+tests
+__tests__
+
+# Logs
+logs
+*.log
+
+# Archivos temporales
+tmp
+temp
+.cache
+
+

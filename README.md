@@ -39,9 +39,10 @@ Página web informativa inspirada en **Hell House LLC** para promocionar un jueg
 - **Resend** - Servicio de emails (recomendado)
 
 ### DevOps
+- **Docker & Docker Compose** - Contenedores para desarrollo y producción ✅
 - **GitHub Actions** - Automatización de pruebas (linting HTML, CSS, JavaScript) ✅
-- Docker para contenedores (futuro)
-- Nginx para reverse proxy (futuro)
+- **Nginx** - Servidor web para el frontend ✅
+- **PostgreSQL** - Base de datos en contenedor ✅
 
 ---
 
@@ -149,8 +150,31 @@ Integradora/
 
 ## 🚀 Inicio Rápido
 
-### Requisitos Previos
+### Opción 1: Con Docker (Recomendado) 🐳
 
+**Requisitos**: Solo Docker Desktop instalado
+
+```bash
+# 1. Clonar el repositorio
+git clone <repo-url>
+cd Integradora
+
+# 2. Crear archivo .env (opcional, usa valores por defecto)
+# Ver DOCKER_README.md para más detalles
+
+# 3. Iniciar todos los servicios
+docker-compose up --build
+
+# 4. Abrir en navegador
+# Frontend: http://localhost:4200
+# Backend: http://localhost:3000
+```
+
+Ver **[DOCKER_README.md](DOCKER_README.md)** para instrucciones detalladas.
+
+### Opción 2: Instalación Local
+
+**Requisitos**:
 - Node.js 18+ ([Descargar](https://nodejs.org/))
 - PostgreSQL 14+ ([Descargar](https://www.postgresql.org/download/))
 - Angular CLI: `npm install -g @angular/cli`
@@ -196,11 +220,8 @@ ng serve
 
 ### Documentos Disponibles
 
-- **[SETUP.md](SETUP.md)** - Guía completa de instalación paso a paso
-- **[DATABASE_OPTIONS.md](DATABASE_OPTIONS.md)** - Comparación de bases de datos (PostgreSQL, MongoDB, Supabase, Firebase)
-- **[CONTENT_IDEAS.md](CONTENT_IDEAS.md)** - Ideas para imágenes, audio y contenido de terror
-- **[AUTOMATION_DOCUMENTATION.md](AUTOMATION_DOCUMENTATION.md)** - Documentación completa del proceso de automatización de pruebas (linting HTML, CSS, JavaScript)
-- **[LINTING_QUICKSTART.md](LINTING_QUICKSTART.md)** - Guía rápida para ejecutar linting localmente
+- **[DOCKER_README.md](DOCKER_README.md)** - 🐳 Guía completa de Docker (Inicio rápido, comandos, solución de problemas)
+- **[README.md](README.md)** - Este archivo (Descripción general del proyecto)
 
 ### API Endpoints
 
@@ -280,6 +301,8 @@ Ver [SETUP.md](SETUP.md) para instrucciones detalladas de:
 - [x] Noticias con base de datos
 - [x] Backend API REST
 - [x] Frontend Angular responsive
+- [x] Docker & Docker Compose completo
+- [x] Automatización de pruebas con GitHub Actions (linting)
 
 ### 🚧 Fase 2 - Contenido (En Progreso)
 - [ ] Agregar imágenes del hotel
