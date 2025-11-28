@@ -220,7 +220,11 @@ ng serve
 
 ### Documentos Disponibles
 
+- **[DEPLOY_GITHUB_PAGES.md](DEPLOY_GITHUB_PAGES.md)** - 🚀 Documentación completa de despliegue a GitHub Pages
+- **[RESUMEN_DESPLIEGUE.md](RESUMEN_DESPLIEGUE.md)** - 📋 Resumen ejecutivo del despliegue
+- **[CONFIGURACION_GITHUB_PAGES.md](CONFIGURACION_GITHUB_PAGES.md)** - ⚙️ Guía de configuración paso a paso
 - **[DOCKER_README.md](DOCKER_README.md)** - 🐳 Guía completa de Docker (Inicio rápido, comandos, solución de problemas)
+- **[SLA_ACUERDO_NIVEL_SERVICIO.md](SLA_ACUERDO_NIVEL_SERVICIO.md)** - 📄 Acuerdo de Nivel de Servicio
 - **[README.md](README.md)** - Este archivo (Descripción general del proyecto)
 
 ### API Endpoints
@@ -318,11 +322,13 @@ Ver [SETUP.md](SETUP.md) para instrucciones detalladas de:
 - [ ] Comentarios en noticias
 - [ ] Chat "haunted"
 
-### 🚀 Fase 4 - Producción (Futuro)
-- [ ] Deploy en Vercel/Netlify (frontend)
+### ✅ Fase 4 - Producción (Completada)
+- [x] Deploy en GitHub Pages (frontend) ✅
+- [x] Automatización de despliegue con GitHub Actions ✅
+- [x] Pruebas automatizadas antes del despliegue ✅
 - [ ] Deploy en Railway/Render (backend)
 - [ ] Dominio personalizado
-- [ ] SSL/HTTPS
+- [ ] SSL/HTTPS (GitHub Pages ya incluye HTTPS)
 - [ ] CDN para assets
 - [ ] Analytics
 
